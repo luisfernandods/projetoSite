@@ -2,13 +2,10 @@ var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
 
-    nome: {
-        type: String,
-        required: true
-    }
+    nome: { type: String, required: true, index: { unique: true } }
 
-});
+}, { collection: 'usuario' });
 
-mongoose.model('Usuario', schema);
+module.exports = mongoose.model('Usuario', schema);
 
 

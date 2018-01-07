@@ -1,10 +1,13 @@
 var Usuario = require('../usuario');
 
-
 module.exports = {
 
-    cadastrarUsuario: function () {
+    cadastrar: function (nomeUsuario) {
+        return Usuario.create({ nome: nomeUsuario });
+    },
 
+    listar: function () {
+        return Usuario.find({});
     }
 
 };

@@ -9,14 +9,34 @@
 
 	<script src="assets/lib/angular.js"></script>
 	<script src="index-controller.js"></script>
+	<script src="shared/services/httpServices.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/css/style.css">
 </head>
 
 <body ng-controller="IndexController">
 
+	<div class="container">
+		<p ng-show="mensagemOK.length">{{mensagemOK}}</p>
+		<input class="form form-control" type="text" ng-model="nome" placeholder="Nome">
+		<button class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>
 
-
+		<table class="table" ng-show="usuarios.length">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="usuario in usuarios">
+					<td>{{usuario.nome}}</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 
 </html>
